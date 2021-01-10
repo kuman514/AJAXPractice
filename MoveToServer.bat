@@ -1,0 +1,1 @@
+copy * "C:\Apache24\htdocs"

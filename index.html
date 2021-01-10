@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <h1><a href="index.html">WEB</a></h1>
+        <h1><a onclick="changeArticle('web')">WEB</a></h1>
         <input type="button" value="night" onclick="nightDayHandler(this);">
         <div id="grid">
             <ol>
@@ -20,9 +20,11 @@
                 <li><a onclick="changeArticle('javascript')">JavaScript</a></li>
             </ol>
             <div id="article">
+                <script>
+                    changeArticle('web')
+                </script>
                 <article>
-                    <h3>WEB</h3>
-                    <p>The World Wide Web (abbreviated WWW or the Web) is an information space where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and can be accessed via the Internet. English scientist Tim Berners-Lee invented the World Wide Web in 1989. He wrote the first web browser computer program in 1990 while employed at CERN in Switzerland. The Web browser was released outside of CERN in 1991, first to other research institutions starting in January 1991 and to the general public on the Internet in August 1991.</p>
+
                 </article>
             </div>
         </div>

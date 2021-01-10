@@ -14,10 +14,8 @@
         <h1><a href="#!web" onclick="changeArticle('web')">WEB</a></h1>
         <input type="button" value="night" onclick="nightDayHandler(this);">
         <div id="grid">
-            <ol>
-                <li><a href="#!html" onclick="changeArticle('html')">HTML</a></li>
-                <li><a href="#!css" onclick="changeArticle('css')">CSS</a></li>
-                <li><a href="#!javascript" onclick="changeArticle('javascript')">JavaScript</a></li>
+            <ol id="nav">
+
             </ol>
             <div id="article">
                 <article>
@@ -29,6 +27,17 @@
                   } else {
                     changeArticle ('web')
                   }
+
+                  fetch('list').then(function (response) {
+                    response.text().then(function (text) {
+                      // <li><a href="#!html" onclick="changeArticle('html')">HTML</a></li>
+                      let items = text.split(',')
+                      items.forEach(item => {
+                        let append = "<li><a href=\"#!" + item + "\" onclick=\"changeArticle('" + item + "')\">" + item + "</a></li>"
+                        document.querySelector('#nav').innerHTML += append
+                      })
+                    })
+                  })
                 </script>
             </div>
         </div>

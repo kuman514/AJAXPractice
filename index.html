@@ -11,21 +11,25 @@
     </head>
 
     <body>
-        <h1><a onclick="changeArticle('web')">WEB</a></h1>
+        <h1><a href="#!web" onclick="changeArticle('web')">WEB</a></h1>
         <input type="button" value="night" onclick="nightDayHandler(this);">
         <div id="grid">
             <ol>
-                <li><a onclick="changeArticle('html')">HTML</a></li>
-                <li><a onclick="changeArticle('css')">CSS</a></li>
-                <li><a onclick="changeArticle('javascript')">JavaScript</a></li>
+                <li><a href="#!html" onclick="changeArticle('html')">HTML</a></li>
+                <li><a href="#!css" onclick="changeArticle('css')">CSS</a></li>
+                <li><a href="#!javascript" onclick="changeArticle('javascript')">JavaScript</a></li>
             </ol>
             <div id="article">
-                <script>
-                    changeArticle('web')
-                </script>
                 <article>
 
                 </article>
+                <script>
+                  if (location.hash) {
+                    changeArticle (location.hash.substr(2))
+                  } else {
+                    changeArticle ('web')
+                  }
+                </script>
             </div>
         </div>
     </body>

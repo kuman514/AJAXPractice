@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="colors.js"></script>
+        <script src="article.js"></script>
     </head>
 
     <body>
@@ -14,27 +15,9 @@
         <input type="button" value="night" onclick="nightDayHandler(this);">
         <div id="grid">
             <ol>
-                <li><a onclick="
-                    fetch('html').then(function (response) {
-                        response.text().then(function (text) {
-                            document.querySelector('article').innerHTML = text
-                        })
-                    })
-                ">HTML</a></li>
-                <li><a onclick="
-                    fetch('css').then(function (response) {
-                        response.text().then(function (text) {
-                            document.querySelector('article').innerHTML = text
-                        })
-                    })
-                ">CSS</a></li>
-                <li><a onclick="
-                    fetch('javascript').then(function (response) {
-                        response.text().then(function (text) {
-                            document.querySelector('article').innerHTML = text
-                        })
-                    })
-                ">JavaScript</a></li>
+                <li><a onclick="changeArticle('html')">HTML</a></li>
+                <li><a onclick="changeArticle('css')">CSS</a></li>
+                <li><a onclick="changeArticle('javascript')">JavaScript</a></li>
             </ol>
             <div id="article">
                 <article>
